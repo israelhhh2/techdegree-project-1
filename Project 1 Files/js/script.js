@@ -94,6 +94,5 @@ function resetTimer() {
 
 // Will change the quote when button is pressed.
 document.getElementById('loadQuote').addEventListener("click", printQuote, false);
-clearInterval(timer);
 
 
