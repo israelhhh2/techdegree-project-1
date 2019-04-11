@@ -37,6 +37,7 @@ let quotes = [
   }
 ];
 
+
 // Will get a random quote from the quotes array
 function getRandomQuote() {
   let randomNumber = Math.floor(Math.random() * quotes.length);
@@ -62,14 +63,14 @@ function printQuote() {
   }
 
   // Print Tags
-  html += `<p class="quote-tags"><span>${randomQuote.tags.join('   ')} </span></p>`
+  html += `<p class="quote-tags"><span>${randomQuote.tags.join(' ')} </span></p>`
 
   document.querySelector('#quote-box').innerHTML = html;
   changeColor();
 
-  //Change after 20 seconds
-  setInterval(printQuote, 20000);
+  resetTimer();
 }
+
 
 
 // code adapted from https://www.w3resource.com/javascript-exercises/javascript-math-exercise-40.php
@@ -80,14 +81,19 @@ function changeColor() {
   let g = Math.floor(Math.random() * 255);
   let b = Math.floor(Math.random() * 255);
   let randomColor = `rgb(${r},${g},${b})`;
-
   //Selecting body element
   document.body.style.backgroundColor = randomColor;
 }
 
-
+// Set the timer to change quote every 10 seconds
+let timer = setInterval(printQuote, 10000);
+function resetTimer() {
+  clearInterval(timer);
+  timer = setInterval(printQuote, 10000);
+}
 
 // Will change the quote when button is pressed.
-let loadQuote = document.getElementById('loadQuote').addEventListener("click", printQuote, false);
+document.getElementById('loadQuote').addEventListener("click", printQuote, false);
+clearInterval(timer);
 
 
