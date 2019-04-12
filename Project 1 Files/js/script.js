@@ -28,7 +28,7 @@ let quotes = [
   {
     quote: 'One of the most fascinating lessons i\'ve absorbed about life is that struggle is good.',
     source: 'Joe Rogan',
-    tags: ['#life', '#MMA', '#funny', '#podcast']
+    tags: ['#life', '#MMA', '#funny', '#podcast', '#UFC']
   },
   {
     quote: 'If something is important enough you should try even if the probable income is faulure.',
